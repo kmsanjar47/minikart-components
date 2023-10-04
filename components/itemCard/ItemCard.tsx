@@ -2,8 +2,8 @@ import React from "react";
 
 function ItemCard() {
   return (
-    <div className="flex flex-col  m-4">
-      <div className="bg-[url('../public/assets/img/Children-Literature-2.webp')] bg-cover h-96 w-64 cursor-pointer rounded-md mb-3"></div>
+    <div className="flex flex-col mb-4">
+      <div className="bg-[url('../public/assets/img/Children-Literature-2.webp')] bg-cover h-96 w-72 cursor-pointer rounded-md mb-3"></div>
       <h4 className="hover:text-orange-500 hover:cursor-pointer font-semibold mb-2 text-lg">
         The Adventures of TinTin
       </h4>

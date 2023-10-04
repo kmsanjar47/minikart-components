@@ -2,6 +2,7 @@ import React from "react";
 import NavbarItem from "./navbarItem";
 import SearchBar from "../searchBar/searchBar";
 import CustomButton from "../utils/cutomButton/customButton";
+import DropdownMenu from "../dropdown/dropdownMenu";
 
 function navbar() {
   return (
@@ -15,6 +16,7 @@ function navbar() {
       <div>
         <SearchBar />
       </div>
+      <DropdownMenu />
       <div className="flex flex-row">
         <CustomButton text="Become a Seller" />
         <CustomButton text="Join" />
