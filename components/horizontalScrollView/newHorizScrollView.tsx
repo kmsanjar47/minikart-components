@@ -1,43 +1,49 @@
 "use client";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 import items from "@/data/items";
 import React from "react";
-
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import ScrollViewItem from "./scrollViewItem";
 
-function NewHorizScrollView(title: string) {
-  const slideLeft = () => {
-    var slider = document.getElementById("slider");
-    slider!.scrollLeft = slider!.scrollLeft - 500;
+function NewHorizScrollView(props: { title: string }) {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 6,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
 
-  const slideRight = () => {
-    var slider = document.getElementById("slider");
-    slider!.scrollLeft = slider!.scrollLeft + 500;
-  };
+  const product = items.map((item) => (
+    <ScrollViewItem category={item.name} imgUrl={item.imgUrl} />
+  ));
 
   return (
     <>
-      <h1 className="text-3xl font-semibold ">{title}</h1>
-      <div className="relative flex items-center">
-        <MdChevronLeft
-          className="opacity-50 cursor-pointer hover:opacity-100"
-          onClick={slideLeft}
-          size={40}
-        />
-        <div
-          id="slider"
-          className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide flex flex-row"
+      <div className="mx-12 mt-8">
+        <h1 className="text-3xl font-semibold mb-4">{props.title}</h1>
+
+        <Carousel
+          responsive={responsive}
+          swipeable={true}
+          centerMode={true}
+          infinite={true}
         >
-          {items.map((item) => (
-            <ScrollViewItem category={item.name} imgUrl={item.imgUrl} />
-          ))}
-        </div>
-        <MdChevronRight
-          className="opacity-50 cursor-pointer hover:opacity-100"
-          onClick={slideRight}
-          size={40}
-        />
+          {product}
+        </Carousel>
       </div>
     </>
   );

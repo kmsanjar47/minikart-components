@@ -12,7 +12,7 @@ function Home() {
       <Navbar />
       <ItemGroup title="Popular Products" items={items} />
       {/* <HorizontalScrollView title="Which Book You Like to See?" items={items} /> */}
-      <NewHorizScrollView title="" />
+      <NewHorizScrollView title="Which Book You Like to See?" />
       <ItemGroup title="New Arrived" items={items} />
     </div>
   );

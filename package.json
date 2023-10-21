@@ -15,6 +15,7 @@
     "react-dom": "^18",
     "react-horizontal-scrolling-menu": "^4.1.1",
     "react-icons": "^4.11.0",
+    "react-multi-carousel": "^2.8.4",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
